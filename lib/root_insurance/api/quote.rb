@@ -88,7 +88,6 @@ module RootInsurance
           number_of_children:   opts[:number_of_children],
           extended_family_ages: opts[:extended_family_ages]
         }
-        
         post(:quotes, data)
       end  
     end
