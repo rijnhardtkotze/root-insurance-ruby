@@ -20,7 +20,7 @@ module RootInsurance
       #     monthly_premium:  50000,
       #     serial_number:    "1234567890")
       def create_application(policyholder_id:, quote_package_id:, monthly_premium:,
-                            serial_number: nil, spouse_id: nil, children_ids: nil, extended_famliy_ids: nil)
+                             serial_number: nil, spouse_id: nil, children_ids: nil, extended_famliy_ids: nil)
         data = {
           policyholder_id:  policyholder_id,
           quote_package_id: quote_package_id,

@@ -31,7 +31,6 @@ module RootInsurance
       #
       def create_quote(opts={})
         type = opts[:type]
-  
         case type.to_sym
         when :root_gadgets
           create_gadget_quote(opts)
@@ -43,7 +42,7 @@ module RootInsurance
           raise ArgumentError("Unknown quote type: #{type}")
         end
       end
-  
+
       # List available gadget models
       #
       # @return [Array<Hash>]
@@ -54,14 +53,15 @@ module RootInsurance
       def list_gadget_models
         get('gadgets/models')
       end
-  
+
       private
+
       def create_gadget_quote(opts)
         data = {
           type:       :root_gadgets,
           model_name: opts[:model_name]
         }
-  
+
         post(:quotes, data)
       end
   
@@ -76,7 +76,7 @@ module RootInsurance
           age:              opts[:age],
           basic_income_per_month: opts[:basic_income_per_month],
         }
-  
+
         post(:quotes, data)
       end
   
@@ -88,7 +88,7 @@ module RootInsurance
           number_of_children:   opts[:number_of_children],
           extended_family_ages: opts[:extended_family_ages]
         }
-  
+        
         post(:quotes, data)
       end  
     end
